@@ -112,13 +112,79 @@
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
+DROP TABLE IF EXISTS actors;
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS roles;
 
 -- Create new tables, according to your domain model
 -- TODO!
 
+CREATE TABLE actors (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  first_name TEXT,
+  last_name TEXT
+);
+
+CREATE TABLE movies (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT,
+  year_released INTEGER,
+  MPAA_rating TEXT,
+  studio TEXT
+);
+
+CREATE TABLE roles (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT,
+  actor_id INTEGER,
+  movie_id INTEGER
+);
+
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+INSERT INTO actors (
+  first_name,
+  last_name
+)
+VALUES 
+  ("Michael", "Cane"),
+  ("Katie", "Holmes"),
+  ("Liam", "Nesson"),
+  ("Gary", "Oldman"),
+  ("Christian", "Bale"),
+  ("Heath", "Ledger"),
+  ("Aaron", "Eckhart"),
+   ("Maggie", "Gyllenhaal"),
+    ("Tom", "Hardy"),
+     ("Joseph", "Gordon-Levitt")
+;
+
+INSERT INTO movies (
+    title,
+  year_released,
+  MPAA_rating,
+  studio
+)
+
+VALUES (
+    ("Batman Begins",2005, "PG-13","Warner Bros"),
+
+);
+--Christian Bale        Bruce Wayne
+-- Batman Begins          Michael Caine         Alfred
+-- Batman Begins          Liam Neeson           Ra's Al Ghul
+-- Batman Begins          Katie Holmes          Rachel Dawes
+-- Batman Begins          Gary Oldman           Commissioner Gordon
+-- The Dark Knight        Christian Bale        Bruce Wayne
+-- The Dark Knight        Heath Ledger          Joker
+-- The Dark Knight        Aaron Eckhart         Harvey Dent
+-- The Dark Knight        Michael Caine         Alfred
+-- The Dark Knight        Maggie Gyllenhaal     Rachel Dawes
+-- The Dark Knight Rises  Christian Bale        Bruce Wayne
+-- The Dark Knight Rises  Gary Oldman           Commissioner Gordon
+-- The Dark Knight Rises  Tom Hardy             Bane
+-- The Dark Knight Rises  Joseph Gordon-Levitt   Anne Hathaway    
 
 -- Prints a header for the movies output
 .print "Movies"
