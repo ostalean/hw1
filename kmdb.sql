@@ -135,7 +135,7 @@ CREATE TABLE movies (
 
 CREATE TABLE roles (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT,
+  role_name TEXT,
   actor_id INTEGER,
   movie_id INTEGER
 );
@@ -167,11 +167,31 @@ MPAA_rating,
 )
 VALUES
     ("Batman Begins",2005, "PG-13","Warner Bros"),
-    ("The Dark Knight",2008,,"PG-13","Warner Bros"),
-    ("The Dark Knight Rises",2012,,"PG-13","Warner Bros");
+    ("The Dark Knight",2008,"PG-13","Warner Bros"),
+    ("The Dark Knight Rises",2012,"PG-13","Warner Bros");
 
 
--- Prints a header for the movies output
+
+INSERT INTO roles (
+role_name,
+  actor_id,
+  movie_id
+)
+VALUES 
+    ("Bruce Wayne"),
+    ("Alfred"),
+    ("Ra's Al Ghul"),
+    ("Rachel Dawes"),
+    ("Commissioner Gordon"),
+    ("Joker"),
+    ("Harvey Dent"),
+    ("Bane"),
+    ("John Blake"),
+    ("Selina Kyle");
+
+SELECT * FROM actors
+SELECT * FROM movies
+
 .print "Movies"
 .print "======"
 .print ""
