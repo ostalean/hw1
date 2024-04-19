@@ -135,7 +135,7 @@ CREATE TABLE movies (
 
 CREATE TABLE roles (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  role_name TEXT,
+  character_name TEXT,
   actor_id INTEGER,
   movie_id INTEGER
 );
@@ -174,7 +174,7 @@ VALUES
 
 
 INSERT INTO roles (
-role_name,
+character_name,
   actor_id,
   movie_id
 )
@@ -202,7 +202,7 @@ VALUES
 
 -- The SQL statement for the movies output
 -- TODO!
-
+SELECT * FROM movies;
 
 -- Prints a header for the cast output
 .print ""
@@ -213,3 +213,11 @@ VALUES
 
 -- The SQL statement for the cast output
 -- TODO!
+SELECT movies.title, actors.first_name, actors.last_name, roles.character_name
+FROM roles
+INNER JOIN actors ON roles.actor_id = actors.id
+INNER JOIN movies ON roles.movie_id = movies.id
+ORDER BY movies.title;
+
+-- Batman Begins          Christian Bale        Bruce Wayne
+-- Batman Begins          Michael Caine         Alfred
