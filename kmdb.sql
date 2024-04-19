@@ -155,9 +155,10 @@ VALUES
   ("Christian", "Bale"),
   ("Heath", "Ledger"),
   ("Aaron", "Eckhart"),
-   ("Maggie", "Gyllenhaal"),
-    ("Tom", "Hardy"),
-     ("Joseph", "Gordon-Levitt");
+  ("Maggie", "Gyllenhaal"),
+  ("Tom", "Hardy"),
+  ("Joseph", "Gordon-Levitt"),
+  ("Anne", "Hathaway");
 
 INSERT INTO movies (
 title,
@@ -178,19 +179,22 @@ role_name,
   movie_id
 )
 VALUES 
-    ("Bruce Wayne"),
-    ("Alfred"),
-    ("Ra's Al Ghul"),
-    ("Rachel Dawes"),
-    ("Commissioner Gordon"),
-    ("Joker"),
-    ("Harvey Dent"),
-    ("Bane"),
-    ("John Blake"),
-    ("Selina Kyle");
+    ("Bruce Wayne", 5, 1),
+    ("Bruce Wayne", 5, 2),
+    ("Bruce Wayne", 5, 3),
+    ("Alfred", 1, 1),
+    ("Alfred", 1, 2),
+    ("Ra's Al Ghul", 3, 1),
+    ("Rachel Dawes", 2, 1),
+    ("Rachel Dawes", 8, 2),
+    ("Commissioner Gordon", 4, 1),
+    ("Commissioner Gordon", 4, 3),
+    ("Joker", 6, 2),
+    ("Harvey Dent", 7,2),
+    ("Bane", 9, 3),
+    ("John Blake", 10, 3),
+    ("Selina Kyle",11, 3 );
 
-SELECT * FROM actors
-SELECT * FROM movies
 
 .print "Movies"
 .print "======"
@@ -198,6 +202,7 @@ SELECT * FROM movies
 
 -- The SQL statement for the movies output
 -- TODO!
+
 
 -- Prints a header for the cast output
 .print ""
