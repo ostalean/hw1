@@ -218,6 +218,3 @@ FROM roles
 INNER JOIN actors ON roles.actor_id = actors.id
 INNER JOIN movies ON roles.movie_id = movies.id
 ORDER BY movies.title;
-
--- Batman Begins          Christian Bale        Bruce Wayne
--- Batman Begins          Michael Caine         Alfred
